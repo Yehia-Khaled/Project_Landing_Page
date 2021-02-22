@@ -1,5 +1,5 @@
 //test js connect with html file
-console.log(seccess)
+//console.log("seccess")
 /**
  * 
  * Manipulating the DOM exercise.

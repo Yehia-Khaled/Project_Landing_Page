@@ -72,11 +72,12 @@ section {
     /*text-align: right;*/
     /*text-align: center;*/
 }
-.navbar__menu li a{
-    width: 250px;
+.navbar__menu li{
+    width: 150px;
     border: 3px solid royalblue;
     padding: 5px;
     margin: 15px;
+    color: black;
     /*display: inline-block;*/
     /*list-style: none;*/
     /*float:left;*/
@@ -84,9 +85,6 @@ section {
     /*text-align: left;*/
 
 }
-}
-
-
 .navbar__menu .menu__link {
     display: block;
     padding: 1em;

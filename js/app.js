@@ -36,7 +36,16 @@
 */
 
 // build the nav
+const sections_length= document.querySelectorAll("section").length
+const virtualpage = document.createDocumentFragment();
+for(let i=1;i<=sections_length;i++)
+{
+    const new_section = document.createElement('li');
+    new_section.textContent = 'Section ' + i;
 
+    virtualpage.appendChild(new_section);
+}
+document.querySelector("#navbar__list").appendChild(virtualpage)
 
 // Add class 'active' to section when near top of viewport
 

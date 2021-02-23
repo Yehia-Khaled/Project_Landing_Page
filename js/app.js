@@ -87,11 +87,21 @@ listSections.forEach(element=>{
     const linkitems=document.createElement("a");
     linkitems.textContent=element.getAttribute("data-nav");
     linkitems.addEventListener('click', function () {
-        console.log('The nav section was clicked!');
+        element.scrollIntoView(true);
+    });
     listitems.appendChild(linkitems);
     virtualpage.appendChild(listitems);
 })
 document.querySelector("#navbar__list").appendChild(virtualpage)
+        //Add EventListener to the links and use scrollIntoView().
+       /* const linkevent =document.querySelectorAll("a");
+        linkevent.forEach(element=>
+        {
+            element.addEventListener('scroll', function () {
+                console.log('The nav section was scroll!');
+                element.scrollIntoView();
+            })
+        })*/
 
 // Add class 'active' to section when near top of viewport
 activeviewport();

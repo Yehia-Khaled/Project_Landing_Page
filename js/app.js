@@ -36,110 +36,72 @@ const listSections=document.querySelectorAll("section");
  * Begin Main Functions
  * 
 */
+//clear activ class dection before add new class to selected item
 function clearactivesection()
 {
-    listSections.forEach(element=> {
+    /*listSections.forEach(element=> {
         element.classList.remove("your-active-class");
-    })
+    })*/
+    for(section of listSections)
+    {
+        section.classList.remove("your-active-class");
+    }
 }
-//function use getboundingclint rect
+//function use getBoundingClientRect rect to get position
 function getrect(elemsec)
 {
         const secposition =elemsec.getBoundingClientRect();
         return (secposition.top);//&&secposition.top >=200
 }
-//activ viewport function
+//active viewport function
 function  activeviewport ()
 {//change landing--container to section
     //const activediv=document.getElementsByTagName("section")
         //if statement to get the Active class
         listSections.forEach(element=>
         {
-            /*if(getrect(element))
-            {
-                //element.classList.toggle("your-active-class")
-               // const elementcontain=
-                if(!element.classList.contains("your-active-class"))
-                {
-                    element.classList.add("your-active-class");
-                }
-            }*/
-
             if(getrect(element) >0 && getrect(element) <200)
             {
                 clearactivesection();
                 element.classList.add("your-active-class");
-
             }
-            /*else {
-                element.classList.remove("your-active-class")
-            }*/
         })
-/*        if(rectactive.top>0 && rectactive.top<200)
-        {
-            //clearactivesection();
-            element.classList.add("your-active-class");
-            /!*!//add activ link class to each link so when
-            const linkcontent =document.querySelectorAll("a");
-            linkcontent.forEach(element=>{
-                element.classList.add("your-active-class");
-            })*!/
-        }*/
+
 
 }
 //function create nav items
 function createnavitems()
 {
     const virtualpage = document.createDocumentFragment();
-// const listSections=document.querySelectorAll("section");
     listSections.forEach(element=>{
         const section_id=element.getAttribute("id");
         const section_name =element.getAttribute("data-nav");
         const listitems=document.createElement("li");
+        // Scroll to section on link click
         listitems.innerHTML=`<a class=menu__link href=#${section_id}>${section_name}</a> `
-         // const linkitems=element.querySelectorAll("a");
-        // linkitems.textContent=element.getAttribute("data-nav");
-
-         //click section on nav to scroll down to it
-         /*linkitems.addEventListener('click', function () {
-             /!*element.scrollIntoView({
-                 behavior: 'smooth'})*!/
-             activeviewport();
-         });*/
-         //listitems.appendChild(linkitems);
         virtualpage.appendChild(listitems);
     })
+    // Build menu
     document.querySelector("#navbar__list").appendChild(virtualpage)
 }
 
-/*//function but in event lestener scroll
-function scrollfunction()
-{
 
-}*/
 // build the nav
-    //build nav dynamically
-
-//call fun
-
-//call create nav items
-createnavitems();
+//build nav dynamically
+createnavitems();//call nav function
 
 
 
 // Add class 'active' to section when near top of viewport
-//activeviewport();
-
-
-
 // Scroll to anchor ID using scrollTO event
+// Set sections as active
+activeviewport();
 
-//scroll page event
-//  document.addEventListener(scroll,function ()
-//  {
-//      clearactivesection();
-//      activeviewport();
-//  })
+
+
+
+
+
 
 /**
  * End Main Functions
@@ -149,11 +111,25 @@ createnavitems();
 //scroll event
 document.addEventListener("scroll", activeviewport)
 
-// Build menu 
+//crate event to button to go top page
+//event when click button
+const buttonevent=document.getElementById("button")
+buttonevent.addEventListener("click", function() {
+    // document.scrollTop(0);
+    document.documentElement.scrollTop = 0;
+})
+//event when scroll page
+buttonevent.addEventListener("scroll", function() {
+ if(document.documentElement.scrollTop > 20)
+ {
+     buttonevent.style.display="block";
+ }
+ else
+     buttonevent.style.display="none";
+})
 
-// Scroll to section on link click
 
-// Set sections as active
+
 
 //code Archive
 /*
@@ -193,6 +169,37 @@ document.querySelector("#navbar__list").appendChild(virtualpage)
                 element.scrollIntoView();
             })
         })
+
+        //activ viewport function
+function  activeviewport ()
+{//change landing--container to section
+    //const activediv=document.getElementsByTagName("section")
+        //if statement to get the Active class
+        listSections.forEach(element=>
+        {
+            /*if(getrect(element))
+            {
+                //element.classList.toggle("your-active-class")
+               // const elementcontain=
+                if(!element.classList.contains("your-active-class"))
+                {
+                    element.classList.add("your-active-class");
+                }
+            }
+
+if(getrect(element) >0 && getrect(element) <200)
+{
+    clearactivesection();
+    element.classList.add("your-active-class");
+
+}
+
+})
+  //function but in event lestener scroll
+function scrollfunction()
+{
+
+}
  */
 //end code here
 //thanks you for review

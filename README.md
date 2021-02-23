@@ -14,10 +14,11 @@ ther is a starter project has some HTML and CSS styling to display a static vers
 You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
 
 To get started, open `js/app.js` and start building out the app's functionality
-you can get starter code from [starter code](#https://github.com/udacity/fend/tree/refresh-2019/projects/landing-page)
+you can get starter code from [starter code](https://github.com/udacity/fend/tree/refresh-2019/projects/landing-page)
 ## Project Overview
 this project from udacity nano degree<br>
 project consist of page have 4 section ,and navegaion bar<br>
+you can access my project by click [link](https://yehia-khaled.github.io/Project_Landing_Page/)
 
 
 ## Used Language 
@@ -34,13 +35,13 @@ project consist of page have 4 section ,and navegaion bar<br>
 ### function clearactivesection
 >This function loop over dection class and remove activ class.<br>
 
-###function getrect
+### function getrect
 > this function get element position on screen so i will use it in [activviewport](#function-activeviewport) function later<br>
 
-###function activeviewport
+### function activeviewport
 > this function use to create and detect activ class section and style it different of other sections.<br>
 
-###function createnavitems
+### function createnavitems
 > this function create navbar menu dynamic whem page load not static,this is helpful do when add section in html file it wile be added and style without write over and over code.<br>
 
 

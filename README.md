@@ -4,9 +4,9 @@
 
 * [Instructions](#instructions)
 * [This project](#This Project)
-* [Used language](#Used Language)
+* [Used Language](#Used Language)
 * [Project Features](#Project Features)
-* [Recap](#Recap)
+* [Recap][#Recap]
 
 ## Instructions
 
@@ -24,7 +24,9 @@ this project from udacity nano degree
 > JS<br>
 
 ##Project Features
-
+write some features here
 ##Recap
-
+project recap
 ###hint
+
+<!--[#Recap]: #Recap-->

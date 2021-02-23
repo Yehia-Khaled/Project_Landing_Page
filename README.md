@@ -24,9 +24,9 @@ this project from udacity nano degree
 > JS<br>
 
 ##Project Features
-write some features here
+write some features here<br>
 ##Recap
-project recap
+project recap here<br>
 ###hint
 
 <!--[#Recap]: #Recap-->

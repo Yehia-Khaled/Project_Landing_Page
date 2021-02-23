@@ -91,23 +91,17 @@ function createnavitems()
 createnavitems();//call nav function
 
 
-
 // Add class 'active' to section when near top of viewport
 // Scroll to anchor ID using scrollTO event
 // Set sections as active
 activeviewport();
-
-
-
-
-
-
 
 /**
  * End Main Functions
  * Begin Events
  * 
 */
+//start Events
 //scroll event
 document.addEventListener("scroll", activeviewport)
 

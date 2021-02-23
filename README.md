@@ -3,10 +3,10 @@
 ## Table of Contents
 
 * [Instructions](#instructions)
-* [This project](#This Project)
-* [Used Language](#Used Language)
-* [Project Features](#Project Features)
-* [Recap][#Recap]
+* [This Project](#This-Project)
+* [Used Language](#Used-Language)
+* [Project Features](#Project-Features)
+* [Recap](#Recap)
 
 ## Instructions
 

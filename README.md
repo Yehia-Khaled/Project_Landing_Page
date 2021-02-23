@@ -23,10 +23,10 @@ this project from udacity nano degree
 > CSS<br>
 > JS<br>
 
-##Project Features
+## Project Features
 write some features here<br>
-##Recap
+## Recap
 project recap here<br>
-###hint
+### hint
 
 <!--[#Recap]: #Recap-->

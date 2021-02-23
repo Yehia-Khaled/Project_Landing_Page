@@ -3,7 +3,7 @@
 ## Table of Contents
 
 * [Instructions](#instructions)
-* [This Project](#This-Project)
+* [Project Overview](#Project-Overview)
 * [Used Language](#Used-Language)
 * [Project Features](#Project-Features)
 * [Recap](#Recap)
@@ -15,7 +15,7 @@ The starter project has some HTML and CSS styling to display a static version of
 To get started, open `js/app.js` and start building out the app's functionality
 
 For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
-## This Project
+## Project Overview
 this project from udacity nano degree
 
 ## Used Language 

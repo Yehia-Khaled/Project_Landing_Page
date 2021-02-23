@@ -19,7 +19,7 @@
  * Define Global Variables
  * 
 */
-var listSections=document.querySelectorAll("section");
+var listSections;
 
 /**
  * End Global Variables
@@ -36,7 +36,29 @@ var listSections=document.querySelectorAll("section");
  * Begin Main Functions
  * 
 */
+function clearactivesection()
+{
+    listSections.forEach(element=> {
+        element.classList.remove("your-active-class");
+    })
+}
+//activ viewport function
+function  activeviewport ()
+{//change landing--container to section
+    //const activediv=document.getElementsByTagName("section")
+    listSections.forEach(element=>{
+        const rectactive =element.getBoundingClientRect()
+        //if statement to get the Active class
+        if(rectactive.top>0 && rectactive.top<250)
+        {
+            clearactivesection();
+            element.classList.add("your-active-class")
+        }
+        // const activ_data_nav =element.querySelector("data-nav");
+        // console.log(activ_data_nav);
+    })
 
+}
 // build the nav
     //build nav dynamically
 /*
@@ -57,33 +79,24 @@ for(let i=1;i<=sections_length;i++)
 document.querySelector("#navbar__list").appendChild(virtualpage)
 */
 //call fun
+listSections=document.querySelectorAll("section");
 const virtualpage = document.createDocumentFragment();
 // const listSections=document.querySelectorAll("section");
 listSections.forEach(element=>{
     const listitems=document.createElement("li");
     const linkitems=document.createElement("a");
     linkitems.textContent=element.getAttribute("data-nav");
+    linkitems.addEventListener('click', function () {
+        console.log('The nav section was clicked!');
     listitems.appendChild(linkitems);
     virtualpage.appendChild(listitems);
 })
 document.querySelector("#navbar__list").appendChild(virtualpage)
+
 // Add class 'active' to section when near top of viewport
-function  activeviewport ()
-{//change landing--container to section
-    const activediv=document.getElementsByTagName("section")
-    const rectactive =activediv.getBoundingClientRect()
-    if(rectactive.top>0 && rectactive.top<250)
-    {
-        // create clear function
-        //call clear func
-        /*listSections.forEach(element=> {
-            document.querySelectorAll("section").classList.remove("your-active-class");
+activeviewport();
 
 
-        })*/
-        // rectactive.classList.add("your-active-class")
-    }
-}
 
 // Scroll to anchor ID using scrollTO event
 

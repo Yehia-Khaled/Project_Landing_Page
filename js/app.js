@@ -46,7 +46,7 @@ function clearactivesection()
 function getrect(elemsec)
 {
         const secposition =elemsec.getBoundingClientRect();
-        return (secposition.top >=0  );//&&secposition.top >=200
+        return (secposition.top);//&&secposition.top >=200
 }
 //activ viewport function
 function  activeviewport ()
@@ -64,11 +64,13 @@ function  activeviewport ()
                     element.classList.add("your-active-class");
                 }
             }*/
-            /*if(getrect(element).top>0 && getrect(element).top<200)
+
+            if(getrect(element) >0 && getrect(element) <200)
             {
+                clearactivesection();
                 element.classList.add("your-active-class");
 
-            }*/
+            }
             /*else {
                 element.classList.remove("your-active-class")
             }*/
@@ -95,15 +97,15 @@ function createnavitems()
         const section_name =element.getAttribute("data-nav");
         const listitems=document.createElement("li");
         listitems.innerHTML=`<a class=menu__link href=#${section_id}>${section_name}</a> `
-         const linkitems=element.querySelectorAll("a");
+         // const linkitems=element.querySelectorAll("a");
         // linkitems.textContent=element.getAttribute("data-nav");
 
          //click section on nav to scroll down to it
-         // linkitems.addEventListener('click', function () {
-         //     element.scrollIntoView({
-         //         behavior: 'smooth'})
-         //     activeviewport();
-         // });
+         /*linkitems.addEventListener('click', function () {
+             /!*element.scrollIntoView({
+                 behavior: 'smooth'})*!/
+             activeviewport();
+         });*/
          //listitems.appendChild(linkitems);
         virtualpage.appendChild(listitems);
     })

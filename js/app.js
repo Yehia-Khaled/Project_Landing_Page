@@ -19,7 +19,7 @@
  * Define Global Variables
  * 
 */
-var listSections;
+var listSections=document.querySelectorAll("section");
 
 /**
  * End Global Variables
@@ -49,13 +49,17 @@ function  activeviewport ()
     listSections.forEach(element=>{
         const rectactive =element.getBoundingClientRect()
         //if statement to get the Active class
-        if(rectactive.top>0 && rectactive.top<250)
+        if(rectactive.top>0 && rectactive.top<200)
         {
             clearactivesection();
-            element.classList.add("your-active-class")
+            element.classList.add("your-active-class");
+            //add activ link class to each link so when
+            // const linkcontent =document.querySelectorAll("a");
+            // linkcontent.forEach(element=>{
+            //     element.classList.add("your-active-class");
+            // })
         }
-        // const activ_data_nav =element.querySelector("data-nav");
-        // console.log(activ_data_nav);
+
     })
 
 }
@@ -79,15 +83,17 @@ for(let i=1;i<=sections_length;i++)
 document.querySelector("#navbar__list").appendChild(virtualpage)
 */
 //call fun
-listSections=document.querySelectorAll("section");
+
 const virtualpage = document.createDocumentFragment();
 // const listSections=document.querySelectorAll("section");
 listSections.forEach(element=>{
     const listitems=document.createElement("li");
     const linkitems=document.createElement("a");
     linkitems.textContent=element.getAttribute("data-nav");
+    //click section on nav to scroll down to it
     linkitems.addEventListener('click', function () {
         element.scrollIntoView(true);
+        activeviewport()
     });
     listitems.appendChild(linkitems);
     virtualpage.appendChild(listitems);
@@ -110,6 +116,12 @@ activeviewport();
 
 // Scroll to anchor ID using scrollTO event
 
+//scroll page event
+ document.addEventListener(scroll,function ()
+ {
+     clearactivesection();
+     activeviewport();
+ })
 
 /**
  * End Main Functions

@@ -10,6 +10,9 @@
 
 
 /* ---- Base Rules ---- */
+html{
+    scroll-behavior: smooth ;
+}
 body {
     background: rgb(136,203,171);
     background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
@@ -87,8 +90,8 @@ section {
 }
 .navbar__menu .menu__link {
     display: block;
-    padding: 1em;
-    font-weight: bold;
+    padding: 0.5em;
+    font-w/**/eight: bold;
     text-decoration: none;
     color: #000;
 }

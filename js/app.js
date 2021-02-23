@@ -19,8 +19,8 @@
  * Define Global Variables
  * 
 */
-var listSections=document.querySelectorAll("section");
-
+const listSections=document.querySelectorAll("section");
+//const listSections=Array.from(document.querySelectorAll("section"));
 /**
  * End Global Variables
  * Start Helper Functions
@@ -42,30 +42,121 @@ function clearactivesection()
         element.classList.remove("your-active-class");
     })
 }
+//function use getboundingclint rect
+function getrect(elemsec)
+{
+        const secposition =elemsec.getBoundingClientRect();
+        return (secposition.top >=0  );//&&secposition.top >=200
+}
 //activ viewport function
 function  activeviewport ()
 {//change landing--container to section
     //const activediv=document.getElementsByTagName("section")
-    listSections.forEach(element=>{
-        const rectactive =element.getBoundingClientRect()
         //if statement to get the Active class
-        if(rectactive.top>0 && rectactive.top<200)
+        listSections.forEach(element=>
         {
-            clearactivesection();
-            element.classList.add("your-active-class");
-            //add activ link class to each link so when
-            // const linkcontent =document.querySelectorAll("a");
-            // linkcontent.forEach(element=>{
-            //     element.classList.add("your-active-class");
-            // })
-        }
+            /*if(getrect(element))
+            {
+                //element.classList.toggle("your-active-class")
+               // const elementcontain=
+                if(!element.classList.contains("your-active-class"))
+                {
+                    element.classList.add("your-active-class");
+                }
+            }*/
+            /*if(getrect(element).top>0 && getrect(element).top<200)
+            {
+                element.classList.add("your-active-class");
 
-    })
+            }*/
+            /*else {
+                element.classList.remove("your-active-class")
+            }*/
+        })
+/*        if(rectactive.top>0 && rectactive.top<200)
+        {
+            //clearactivesection();
+            element.classList.add("your-active-class");
+            /!*!//add activ link class to each link so when
+            const linkcontent =document.querySelectorAll("a");
+            linkcontent.forEach(element=>{
+                element.classList.add("your-active-class");
+            })*!/
+        }*/
 
 }
+//function create nav items
+function createnavitems()
+{
+    const virtualpage = document.createDocumentFragment();
+// const listSections=document.querySelectorAll("section");
+    listSections.forEach(element=>{
+        const section_id=element.getAttribute("id");
+        const section_name =element.getAttribute("data-nav");
+        const listitems=document.createElement("li");
+        listitems.innerHTML=`<a class=menu__link href=#${section_id}>${section_name}</a> `
+         const linkitems=element.querySelectorAll("a");
+        // linkitems.textContent=element.getAttribute("data-nav");
+
+         //click section on nav to scroll down to it
+         // linkitems.addEventListener('click', function () {
+         //     element.scrollIntoView({
+         //         behavior: 'smooth'})
+         //     activeviewport();
+         // });
+         //listitems.appendChild(linkitems);
+        virtualpage.appendChild(listitems);
+    })
+    document.querySelector("#navbar__list").appendChild(virtualpage)
+}
+
+/*//function but in event lestener scroll
+function scrollfunction()
+{
+
+}*/
 // build the nav
     //build nav dynamically
+
+//call fun
+
+//call create nav items
+createnavitems();
+
+
+
+// Add class 'active' to section when near top of viewport
+//activeviewport();
+
+
+
+// Scroll to anchor ID using scrollTO event
+
+//scroll page event
+//  document.addEventListener(scroll,function ()
+//  {
+//      clearactivesection();
+//      activeviewport();
+//  })
+
+/**
+ * End Main Functions
+ * Begin Events
+ * 
+*/
+//scroll event
+document.addEventListener("scroll", activeviewport)
+
+// Build menu 
+
+// Scroll to section on link click
+
+// Set sections as active
+
+//code Archive
 /*
+*
+//build nav dynamically
 const sections_length= document.querySelectorAll("section").length
 const virtualpage = document.createDocumentFragment();
 for(let i=1;i<=sections_length;i++)
@@ -81,25 +172,17 @@ for(let i=1;i<=sections_length;i++)
     virtualpage.appendChild(list_section);
 }
 document.querySelector("#navbar__list").appendChild(virtualpage)
-*/
-//call fun
+*
+// Scroll to anchor ID using scrollTO event
 
-const virtualpage = document.createDocumentFragment();
-// const listSections=document.querySelectorAll("section");
-listSections.forEach(element=>{
-    const listitems=document.createElement("li");
-    const linkitems=document.createElement("a");
-    linkitems.textContent=element.getAttribute("data-nav");
-    //click section on nav to scroll down to it
-    linkitems.addEventListener('click', function () {
-        element.scrollIntoView(true);
-        activeviewport()
-    });
-    listitems.appendChild(linkitems);
-    virtualpage.appendChild(listitems);
-})
-document.querySelector("#navbar__list").appendChild(virtualpage)
-        //Add EventListener to the links and use scrollIntoView().
+//scroll page event
+//  document.addEventListener(scroll,function ()
+//  {
+//      clearactivesection();
+//      activeviewport();
+//  })
+
+*         //Add EventListener to the links and use scrollIntoView().
        /* const linkevent =document.querySelectorAll("a");
         linkevent.forEach(element=>
         {
@@ -107,35 +190,8 @@ document.querySelector("#navbar__list").appendChild(virtualpage)
                 console.log('The nav section was scroll!');
                 element.scrollIntoView();
             })
-        })*/
-
-// Add class 'active' to section when near top of viewport
-activeviewport();
-
-
-
-// Scroll to anchor ID using scrollTO event
-
-//scroll page event
- document.addEventListener(scroll,function ()
- {
-     clearactivesection();
-     activeviewport();
- })
-
-/**
- * End Main Functions
- * Begin Events
- * 
-*/
-
-// Build menu 
-
-// Scroll to section on link click
-
-// Set sections as active
-
-
+        })
+ */
 //end code here
-//thank you for review
+//thanks you for review
 

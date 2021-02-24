@@ -78,15 +78,20 @@ section {
     /*text-align: center;*/
 }
 /*style nav bar to be acceceble in all devices*/
-/*.containernavbar*/
-/*{*/
-/*    display:flex;*/
-/*    flex-direction: row;*/
-/*}*/
+/*.containernavbar
+{
+    display:flex;
+    flex-direction: row;
+}*/
+@media screen and (max-width: 700px) {
+    .navbar__menu ul {
+        flex-direction: column;
+    }
+}
 .navbar__menu li{
-    width: 150px;
-    border: 3px solid royalblue;
-    padding: 5px;
+    width: auto;
+    border: 2px solid royalblue;
+    padding: 3px;
     margin: 3px;
     color: black;
     /*display: inline-block;*/

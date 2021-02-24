@@ -79,6 +79,11 @@ function createnavitems()
         const listitems=document.createElement("li");
         // Scroll to section on link click
         listitems.innerHTML=`<a class=menu__link href=#${section_id}>${section_name}</a> `
+       /* const linkitems=element.getElementsByTagName("a");
+        linkitems.addEventListener("click",function preventlinkclick () {
+            preventlinkclick.preventDefault()
+            element.scrollIntoView(true);
+        })*/
         virtualpage.appendChild(listitems);
     })
     // Build menu
@@ -102,9 +107,10 @@ activeviewport();
  * 
 */
 //start Events
-//scroll event
+ //scroll event
 //i am use cee property to make scroll smooth i don't need to add there too
 document.addEventListener("scroll", activeviewport)
+/*
 //create nav event click,us udacity tips
 const linkitems=document.querySelectorAll("a");
 linkitems.forEach(element=>
@@ -112,7 +118,7 @@ linkitems.forEach(element=>
     element.addEventListener("click", function () {
          activeviewport();
     })
-})
+})*/
 //edit css style to be flex nav menu (container no element)
 
 //crate event to button to go top page

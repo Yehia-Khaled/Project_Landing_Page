@@ -74,16 +74,17 @@ function createnavitems()
 {
     const virtualpage = document.createDocumentFragment();
     listSections.forEach(element=>{
-        const section_id=element.getAttribute("id");
-        const section_name =element.getAttribute("data-nav");
         const listitems=document.createElement("li");
-        // Scroll to section on link click
-        listitems.innerHTML=`<a class=menu__link href=#${section_id}>${section_name}</a> `
-       /* const linkitems=element.getElementsByTagName("a");
-        linkitems.addEventListener("click",function preventlinkclick () {
+        const linkitems=document.createElement("a");
+        linkitems.textContent=element.getAttribute("data-nav");
+        linkitems.classname="menu__link";
+        //click section on nav to scroll down to it
+        linkitems.addEventListener('click', function  (preventlinkclick) {
             preventlinkclick.preventDefault()
             element.scrollIntoView(true);
-        })*/
+             activeviewport()
+        });
+        listitems.appendChild(linkitems);
         virtualpage.appendChild(listitems);
     })
     // Build menu

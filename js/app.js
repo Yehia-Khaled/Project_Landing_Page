@@ -163,5 +163,5 @@ buttonevent.addEventListener("scroll", function() {
 })
 
 //end code here
-//thanks you for review
+//thanks for review
 

@@ -74,6 +74,7 @@ function createnavitems()
 {
     const virtualpage = document.createDocumentFragment();
     listSections.forEach(element=>{
+/*      another way to create nav bar
         const listitems=document.createElement("li");
         const linkitems=document.createElement("a");
         linkitems.textContent=element.getAttribute("data-nav");
@@ -81,19 +82,18 @@ function createnavitems()
         //click section on nav to scroll down to it
         linkitems.addEventListener('click', function  (preventlinkclick) {
             preventlinkclick.preventDefault()
+            const linkdatanav=linkitems.getAttribute("data-nav");
             element.scrollIntoView(true);
              activeviewport()
         });
         listitems.appendChild(linkitems);
+  */
         /*another solution to add nav bar menu link*/
-        /*
-                const section_id=element.getAttribute("id");
+        const section_id=element.getAttribute("id");
         const section_name =element.getAttribute("data-nav");
         const listitems=document.createElement("li");
         // Scroll to section on link click
         listitems.innerHTML=`<a class=menu__link href=#${section_id}>${section_name}</a> `
-        virtualpage.appendChild(listitems);
-         */
 
         virtualpage.appendChild(listitems);
     })
@@ -108,7 +108,6 @@ createnavitems();//call nav function
 
 
 // Add class 'active' to section when near top of viewport
-// Scroll to anchor ID using scrollTO event
 // Set sections as active
 activeviewport();
 
@@ -118,19 +117,33 @@ activeviewport();
  * 
 */
 //start Events
- //scroll event
+// Scroll to anchor ID using scrollTO event
+//scroll event
 //i am use cee property to make scroll smooth i don't need to add there too
 document.addEventListener("scroll", activeviewport)
-/*
-//create nav event click,us udacity tips
-const linkitems=document.querySelectorAll("a");
-linkitems.forEach(element=>
+
+//event too click on secton link go to correct section
+//i have a proplem with section 1 when i click on it go to section 1 but make  section 2 activ class not section 1
+//can you help me know where the problem ,i tried so much and many code but the problem stal consist
+const linksection=document.querySelectorAll('a');
+linksection.forEach(element=>
 {
-    element.addEventListener("click", function () {
-         activeviewport();
-    })
-})*/
-//edit css style to be flex nav menu (container no element)
+    element.addEventListener('click', function  (preventlinkclick) {
+        preventlinkclick.preventDefault()
+        //you need to make code when click on each link go to approperate section ,make comparison between data nav to go there
+        //element.scrollIntoView(true);
+        const getdatanavlinkcontent =element.textContent;
+        listSections.forEach(element=>{
+            //get datanav to combare it with datanav of section
+            const datanavcontent =element.getAttribute("data-nav");
+            //compare data nav
+            if(datanavcontent===getdatanavlinkcontent)
+            {element.scrollIntoView(true);
+            activeviewport()}
+        })
+    });
+})
+
 
 //crate event to button to go top page
 //event when click button

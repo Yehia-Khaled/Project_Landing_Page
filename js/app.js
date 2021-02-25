@@ -138,7 +138,7 @@ linksection.forEach(element=>
             const datanavcontent =element.getAttribute("data-nav");
             //compare data nav
             if(datanavcontent===getdatanavlinkcontent)
-            {element.scrollIntoView(true);
+            {element.scrollIntoView({behavior:"smooth"});
             activeviewport()}
         })
     });
@@ -163,5 +163,5 @@ buttonevent.addEventListener("scroll", function() {
 })
 
 //end code here
-//thanks  for review
+//thanks for review
 

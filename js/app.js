@@ -56,21 +56,7 @@ function createnavitems()
 {
     const virtualpage = document.createDocumentFragment();
     listSections.forEach(element=>{
-/*      another way to create nav bar
-        const listitems=document.createElement("li");
-        const linkitems=document.createElement("a");
-        linkitems.textContent=element.getAttribute("data-nav");
-        linkitems.setAttribute('class', 'menu__link');
-        //click section on nav to scroll down to it
-        linkitems.addEventListener('click', function  (preventlinkclick) {
-            preventlinkclick.preventDefault()
-            const linkdatanav=linkitems.getAttribute("data-nav");
-            element.scrollIntoView(true);
-             activeviewport()
-        });
-        listitems.appendChild(linkitems);
-  */
-        /*another solution to add nav bar menu link*/
+        /*add nav bar menu link*/
         const section_id=element.getAttribute("id");
         const section_name =element.getAttribute("data-nav");
         const listitems=document.createElement("li");

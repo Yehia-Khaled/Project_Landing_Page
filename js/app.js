@@ -1,5 +1,3 @@
-//test js connect with html file
-//console.log("seccess")
 /**
  * 
  * Manipulating the DOM exercise.
@@ -36,58 +34,28 @@ const listSections=document.querySelectorAll("section");
  * Begin Main Functions
  * 
 */
-//clear activ class dection before add new class to selected item
-function clearactivesection()
-{
-    /*listSections.forEach(element=> {
-        element.classList.remove("your-active-class");
-    })*/
-    for(section of listSections)
-    {
-        section.classList.remove("your-active-class");
-    }
-}
 //function use getBoundingClientRect rect to get position
 function getrect(elemsec)
 {
         const secposition =elemsec.getBoundingClientRect();
-        return (secposition.top);//&&secposition.top >=200
+        return (secposition.top);
 }
 //active viewport function
 function  activeviewport ()
-{//change landing--container to section
-    //const activediv=document.getElementsByTagName("section")
-        //if statement to get the Active class
-        listSections.forEach(element=>
-        {
-            if(getrect(element) >0 && getrect(element) <200)
-            {
-                clearactivesection();
+{
+        //if statement true get the Active class
+        listSections.forEach(element=> {
+            if (getrect(element) > -200 && getrect(element) < 200)
                 element.classList.add("your-active-class");
-            }
+            else//remove active class
+                element.classList.remove("your-active-class");
         })
-
-
 }
 //function create nav items
 function createnavitems()
 {
     const virtualpage = document.createDocumentFragment();
     listSections.forEach(element=>{
-/*      another way to create nav bar
-        const listitems=document.createElement("li");
-        const linkitems=document.createElement("a");
-        linkitems.textContent=element.getAttribute("data-nav");
-        linkitems.setAttribute('class', 'menu__link');
-        //click section on nav to scroll down to it
-        linkitems.addEventListener('click', function  (preventlinkclick) {
-            preventlinkclick.preventDefault()
-            const linkdatanav=linkitems.getAttribute("data-nav");
-            element.scrollIntoView(true);
-             activeviewport()
-        });
-        listitems.appendChild(linkitems);
-  */
         /*another solution to add nav bar menu link*/
         const section_id=element.getAttribute("id");
         const section_name =element.getAttribute("data-nav");
@@ -161,7 +129,6 @@ buttonevent.addEventListener("scroll", function() {
  else
      buttonevent.style.display="none";
 })
-
 //end code here
 //thanks for review
 

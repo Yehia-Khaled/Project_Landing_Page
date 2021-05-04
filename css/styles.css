@@ -104,7 +104,7 @@ section {
 .navbar__menu .menu__link {
     display: block;
     padding: 0.3em;
-    font-w/**/eight: bold;
+    font-w/*eight*/: bold;
     text-decoration: none;
     color: #000;
 }
@@ -112,7 +112,7 @@ section {
 .navbar__menu .menu__link:hover {
     background: #333;
     color: #fff;
-    transition: ease 0.3s all;
+    transition: ease 0.3s  ;
 }
 /*end nav bar style */
 
@@ -169,7 +169,7 @@ section:nth-of-type(odd) .landing__container::before {
     height: 20vh;
     border-radius: 50%;
     opacity: 0;
-    transition: ease 0.5s all;
+    transition: ease 0.5s ;
 }
 
 section:nth-of-type(even) .landing__container::before {
@@ -184,7 +184,7 @@ section:nth-of-type(even) .landing__container::before {
     height: 10vh;
     border-radius: 50%;
     opacity: 0;
-    transition: ease 0.5s all;
+    transition: ease 0.5s  ;
 }
 
 section:nth-of-type(3n) .landing__container::after {
@@ -199,7 +199,7 @@ section:nth-of-type(3n) .landing__container::after {
     height: 10vh;
     border-radius: 50%;
     opacity: 0;
-    transition: ease 0.5s all;
+    transition: ease 0.5s  ;
 }
 
 section:nth-of-type(3n + 1) .landing__container::after {
@@ -214,7 +214,7 @@ section:nth-of-type(3n + 1) .landing__container::after {
     height: 15vh;
     border-radius: 50%;
     opacity: 0;
-    transition: ease 0.5s all;
+    transition: ease 0.5s ;
 }
 
 
